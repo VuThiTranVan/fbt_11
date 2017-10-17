@@ -1,0 +1,21 @@
+
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  host: <host>
+  port: <port>
+  username: <username>
+  password: <password>
+
+development:
+  <<: *default
+  database: <name_db>_development
+
+test:
+  <<: *default
+  database: <name_db>_test
+
+production:
+  <<: *default
+  database: <name_db>_production
