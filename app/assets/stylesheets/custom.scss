@@ -1,0 +1,137 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+$white: #FFFFFF;
+$high_light: #7ac483;
+$light-gray: #777;
+$gray-medium-light: #eaeaea;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "brandon-grotesque", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrapper {
+  width: 1440px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.button {
+  border: none;
+  outline: none;
+  border-radius: 2rem;
+  padding: .6rem 3.5rem;
+  font-weight: 700;
+  color: $white;
+  text-decoration: none;
+  text-align: center;
+}
+
+.button_highlight {
+  background: $high_light;
+}
+
+.button_secondary {
+  background: rgba(250, 250, 250, 0.35);
+}
+
+.button_small {
+  padding: .3rem 1.5rem;
+}
+
+.button_large {
+  padding: 1rem 5rem;
+  font-size: 1.35rem;
+}
+
+#banner {
+  background: url(image_path("bg.jpg")) no-repeat center top;
+  background-size: cover;
+  position: relative;
+  header {
+    padding: 2rem 0;
+  }
+  #logo {
+    color: $white;
+    font-weight: 700;
+    font-size: 1.35rem;
+    float: left;
+    margin: 0;
+    span {
+      font-weight: 400;
+    }
+  }
+  nav {
+    float: right;
+    a {
+      color: $white;
+      font-weight: 700;
+      text-decoration: none;
+      margin-left: 2rem;
+    }
+  }
+  .content {
+    padding: 4rem 0 8rem 0;
+    .title, .sub_title {
+      color: $white;
+      text-align: center;
+    }
+    .title {
+      font-size: 3.5rem;
+      margin: 0;
+    }
+    .sub_title {
+      font-weight: 400;
+      font-size: 1.35rem;
+      width: 500px;
+      margin: 0 auto 2rem auto;
+      line-height: 1.75;
+    }
+    .button_wrapper {
+      text-align: center;
+      margin: 3rem 0;
+      .button {
+        margin: 0 .75rem;
+      }
+    }
+    .see_more {
+      position: absolute;
+      left: 50%;
+      margin-left: -15px;
+      bottom: 90px;
+    }
+  }
+
+  .form_search{
+    margin: auto;
+    color: $high_light;
+    height: 250px;
+    width: 380px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px 10px 10px;
+  }
+}
+
+#banner {
+  padding-top: 50px;
+  height: 80vh;
+}
+
+.custom-nav{
+  margin-bottom: 0;
+}
+
+footer {
+  margin-top: 10px;
+  margin-right: 20px;
+  font-weight: 700;
+  padding-top: 5px;
+  float: right;
+  border-top: 1px solid $gray-medium-light;
+  color: $light-gray;
+}
