@@ -17,6 +17,9 @@ gem "rubocop", "~> 0.50.0", require: false
 gem "i18n-js"
 gem "config"
 gem "mysql2", "~> 0.3.18"
+gem "jquery-rails"
+gem "bootstrap-datepicker-rails"
+gem "bootstrap-sass", "3.3.7"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

@@ -1,3 +1,20 @@
 en:
-  title_project: "Project 1 _ Booking tour"
-  hello: "Hello world"
+  fbt: "Vietnam BOOKING TOUR"
+  static_pages:
+    home:
+      title: "Contemplate the beauty of nature at your fingertips"
+      sub_title: "Vietnam Tour Booking provides many land tours and
+        cruise tours in the most popular destinations of Vietnam"
+      view_more: "View more"
+
+  layouts:
+    header:
+      home: "Home"
+      help: "Help"
+      contact: "Contact"
+      signup: :Signup"
+      login: "Login"
+      logout: "Logout"
+    form_search:
+      title: "TOUR SEARCH"
+    footer: "Copy Right by: VanVTT"
