@@ -88,10 +88,12 @@
           <%= t ".edit" %>
         <% end %>
       <% end %>
-      <%= link_to new_travel_book_tour_path(@travel),
-        class: "btn btn-primary" do %>
-        <span class="glyphicon glyphicon-shopping-cart"></span>
-        <%= t "travel.tour.book_tour" %>
+      <% if @travel.tours.start_date_greater_today.present? %>
+        <%= link_to new_travel_book_tour_path(@travel),
+          class: "btn btn-primary" do %>
+          <span class="glyphicon glyphicon-shopping-cart"></span>
+          <%= t "travel.tour.book_tour" %>
+        <% end %>
       <% end %>
       <%= link_to t("btn_back"), request.referer, class: "btn-default btn" %>
     </div>

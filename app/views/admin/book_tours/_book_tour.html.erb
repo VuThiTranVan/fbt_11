@@ -45,8 +45,9 @@
           <% end %>
           <p class="btn-details btn_reject">
             <%= link_to admin_book_tour_path(book_tour,
-              status: BookTour.statuses[:reject]),
-              method: :PUT, remote: true, class: "hidden-sm" do %>
+              status: BookTour.statuses[:reject]), id: t(".reject"),
+              method: :PUT, remote: true, class: "hidden-sm",
+              data: {confirm: t(".msg_confirm_reject")} do %>
               <i class="glyphicon glyphicon-minus-sign"></i>
               <%= t ".reject" %>
             <% end %>
