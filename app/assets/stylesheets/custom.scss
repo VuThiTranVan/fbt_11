@@ -13,6 +13,33 @@ $gray-medium-light: #eaeaea;
 body {
   font-family: "brandon-grotesque", Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+/* typography */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $light-gray;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
 }
 
 .wrapper {
@@ -117,6 +144,10 @@ body {
   }
 }
 
+.margin_top {
+  margin-top: 10px;
+}
+
 #banner {
   padding-top: 50px;
   height: 80vh;
@@ -124,6 +155,10 @@ body {
 
 .custom-nav{
   margin-bottom: 0;
+}
+
+.container {
+  padding-top: 70px;
 }
 
 footer {
@@ -134,4 +169,10 @@ footer {
   float: right;
   border-top: 1px solid $gray-medium-light;
   color: $light-gray;
+}
+
+.required label:after {
+  content:" *";
+  color: red;
+  display: inline;
 }
