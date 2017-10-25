@@ -5,4 +5,4 @@ user:
   address_length: 255
   telphone_length: 13
   avatar_size: 2
-
+  avatar_size_display: "35x25"

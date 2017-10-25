@@ -10,6 +10,8 @@ en:
     no_user: "Find not user"
     create_user_success: "Register user success."
     create_user_fail: "Register user fail."
+    log_out_success: "Logout success."
+    login_error_mgs: "Invalid email/password combination."
   layouts:
     header:
       home: "Home"
@@ -18,6 +20,8 @@ en:
       signup: :Signup"
       login: "Login"
       logout: "Logout"
+      profile: "Profile"
+      setting: "Setting"
     form_search:
       title: "TOUR SEARCH"
     footer: "Copy Right by: VanVTT"
@@ -36,3 +40,6 @@ en:
       btn_register: "Register User"
       btn_clear: "Clear"
       errors_msg: "The form contains %{count_error}."
+    login:
+      forgot_password: "Forgot the password?"
+      btn_login: "Login"
