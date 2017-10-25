@@ -1,0 +1,17 @@
+<div class="col-md-4 visit-grid">
+  <div class="item-1 item-type-spin">
+    <div class="item-img">
+      <%= image_tag travel.images.first.picture.url, class: "img-responsive" %>
+    </div>
+  </div>
+  <h4><%= link_to travel.name, "#" %></h4>
+  <div class="visit-blog">
+    <div class="visit-btn">
+      <%= link_to t("read_more"), "#" %>
+    </div>
+    <div class="visit-likes">
+      <span class="#"><%= travel.tour_duration %></span>
+    </div>
+    <div class="clearfix"> </div>
+  </div>
+</div>

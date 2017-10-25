@@ -5,6 +5,7 @@ class CreateTravels < ActiveRecord::Migration[5.1]
       t.boolean :flg_promotion, default: 0
       t.text :schedule
       t.text :description
+      t.string :tour_duration
       t.text :note
       t.integer :id_place_from
       t.integer :id_place_to

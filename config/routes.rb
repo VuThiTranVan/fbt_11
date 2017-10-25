@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "static_pages#show", page: "home"
+  root "static_pages#show", url_page: "home"
 
   resources :users
 
