@@ -1,12 +1,20 @@
 <header>
   <div class="navbar navbar-default navbar-static-top navbar-fixed-top custom-nav navbar-inverse">
     <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse"
+        data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
     </div>
-    <div class="navbar-collapse collapse ">
+    <div class="navbar-collapse collapse navbar-margin" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><%= link_to t(".home"), root_path %></li>
         <li><%= link_to t(".help"), "#" %></li>
         <li><%= link_to t(".contact"), "#" %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -19,13 +27,26 @@
               <li><%= link_to t("layouts.header.setting"), "#" %></li>
               <li class="divider"></li>
               <li>
-                <%= link_to t(".logout"), logout_path, method: :delete %>
+                <%= link_to logout_path, method: :delete do %>
+                  <i class="glyphicon glyphicon-log-out"></i>
+                  <%= t ".logout" %>
+                <% end %>
               </li>
             </ul>
           </li>
         <% else %>
-          <li><%= link_to t(".signup"), signup_path %></li>
-          <li><%= link_to t(".login"), login_path %></li>
+          <li>
+            <%= link_to signup_path do %>
+              <i class="glyphicon glyphicon-user"></i>
+              <%= t ".signup" %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to login_path do %>
+              <i class="glyphicon glyphicon-log-in"></i>
+              <%= t ".login" %>
+            <% end %>
+          </li>
         <% end %>
       </ul>
     </div>

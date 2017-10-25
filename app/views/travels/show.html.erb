@@ -1,6 +1,6 @@
-<div class="container" style="margin-top:60px;">
+<div class="row view-detail">
   <div id="carousel-simple"  class="carousel slide col-md-6"
-    data-ride="carousel" style="float: left;">
+    data-ride="carousel">
 
     <ol class="carousel-indicators">
       <% @travel.images.each do |image, n| %>
@@ -73,14 +73,14 @@
         </li>
       </ul>
     </div>
-
-    <%= link_to "#",
-      class: "btn btn-primary" do %>
-      <span class="glyphicon glyphicon-shopping-cart"></span>
-      <%= t "travel.tour.book_tour" %>
-    <% end %>
-    <%= link_to t("btn_back"), request.referer,
-      class: "btn-default btn" %>
+    <div class="btn-booking">
+      <%= link_to "#",
+        class: "btn btn-primary" do %>
+        <span class="glyphicon glyphicon-shopping-cart"></span>
+        <%= t "travel.tour.book_tour" %>
+      <% end %>
+      <%= link_to t("btn_back"), request.referer, class: "btn-default btn" %>
+    </div>
   </div>
   <div class="row">
     <div class="col-md-12">

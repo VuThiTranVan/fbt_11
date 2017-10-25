@@ -43,6 +43,10 @@ p {
   line-height: 1.7em;
 }
 
+.container {
+  margin-top: 50px;
+}
+
 .wrapper {
   width: 1440px;
   max-width: 100%;
@@ -79,9 +83,8 @@ p {
 
 #banner {
   background: url(image_path("bg.jpg")) no-repeat center top;
-  background-size: cover;
+  background-size: 100% 100%;
   position: relative;
-  height: 500px !important;
   header {
     padding: 2rem 0;
   }
@@ -139,7 +142,6 @@ p {
   .form_search{
     margin: auto;
     color: $blue-light;
-    height: 250px;
     width: 380px;
     background: rgba(0, 0, 0, 0.6);
     padding: 15px 10px 10px;
@@ -152,7 +154,6 @@ p {
 
 #banner {
   padding-top: 50px;
-  height: 80vh;
 }
 
 .custom-nav{
@@ -173,4 +174,13 @@ footer {
   content:" *";
   color: red;
   display: inline;
+}
+
+.navbar-margin {
+  margin: 0 35px 0 20px;
+}
+.paginate-center {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
 }
