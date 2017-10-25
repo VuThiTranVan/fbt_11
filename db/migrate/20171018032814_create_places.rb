@@ -4,7 +4,7 @@ class CreatePlaces < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :city
       t.text :description
-      t.boolean :flg_del
+      t.boolean :flg_del, default: false
 
       t.timestamps
     end
