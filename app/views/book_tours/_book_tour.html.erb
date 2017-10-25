@@ -1,0 +1,65 @@
+<div class="col-sm-1">
+  <div class="thumbnail">
+    <%= image_tag book_tour.tour.travel.images.first.picture.url,
+      class: "img-responsive" %>
+  </div><!-- /thumbnail -->
+</div><!-- /col-sm-1 -->
+
+<div class="col-sm-5">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <strong><%= book_tour.tour.travel.name %></strong>
+    </div>
+    <div class="panel-body">
+
+      <table class="table-condensed table-responsive table-book-tour-information">
+        <tbody>
+        <tr>
+          <td><%= t "book_tours.index.start_end_of_tour" %>:</td>
+          <td class="resminde">
+            <%= l book_tour.tour.date_start, format: t("date.formats.default") %>
+            &nbsp;-&nbsp;
+            <%= l book_tour.tour.date_end, format: t("date.formats.default") %>
+          </td>
+        </tr>
+        <tr>
+          <td><%= t "book_tours.satatus" %>:</td>
+          <td><%= book_tour.status %></td>
+        </tr>
+        <tr>
+            <td><%= t "book_tours.index.number_person" %>:</td>
+            <td><%= book_tour.number_person %></td>
+        </tr>
+        <tr>
+          <td><%= t "travels.tour.price" %>:</td>
+          <td><%= book_tour.price %></td>
+        </tr>
+        <tr>
+          <td><%= t "book_tours.index.total_persons_price" %>:</td>
+          <td>
+            <%= t("book_tours.index.total_persons_price_val",
+              price: number_to_currency(book_tour.total_price),
+              person: book_tour.number_person) %>
+          </td>
+        </tr>
+        <tr>
+          <td><%= t "book_tours.index.date_book_tour" %>:</td>
+          <td>
+             <%= l book_tour.created_at, format: t("date.formats.default")%>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class=" paginate-center">
+            <%= link_to t("book_tours.index.detail"),
+              travel_book_tour_path(book_tour.tour.travel.id, book_tour.id),
+              class: "btn btn-primary" %>
+            <%= link_to t("book_tours.cancel"),
+              user_book_tour_path(book_tour.tour.travel.id, book_tour.id),
+              class: "btn btn-default" %>
+          </td>
+        </tr>
+        </tbody>
+    </table>
+    </div><!-- /panel-body -->
+  </div><!-- /panel panel-default -->
+</div><!-- /col-sm-5 -->

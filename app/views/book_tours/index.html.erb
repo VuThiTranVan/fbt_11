@@ -1,0 +1,12 @@
+<div class="row">
+  <h3 class="color-blue-light align-center"><%= t "book_tours.index.header" %></h3>
+  <div class="col-sm-12">
+    <%= will_paginate @book_tours, class: "paginate-center" %>
+  </div>
+    <% @book_tours.each do |book_tour| %>
+      <%= render "book_tour", book_tour: book_tour %>
+    <% end %>
+  <div class="col-sm-12">
+    <%= will_paginate @book_tours, class: "paginate-center" %>
+  </div>
+</div>

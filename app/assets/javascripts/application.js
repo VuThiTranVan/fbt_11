@@ -23,4 +23,6 @@
 //= require rating/bootstrap-rating
 //= require sweetalert2
 //= require sweet-alert2-rails
+//= require book_tour
 //= require turbolinks
+
