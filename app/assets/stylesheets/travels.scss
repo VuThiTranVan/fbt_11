@@ -1,0 +1,73 @@
+$blue-light: #3CAFE6;
+
+.visit-top {
+  text-align: center;
+  margin-bottom: 2.5em;
+  position: relative;
+  h3 {
+    font-size: 3em;
+    color: #000;
+  }
+}
+
+.visit-grid h4 {
+  font-size: 1.5em;
+  text-align: center;
+  margin: 0.5em 0em;
+  a{
+    color: $blue-light;
+    &:hover{
+      color: #000;
+    }
+  }
+}
+
+.visit-btn {
+  float: left;
+  a {
+    font-size: 1em;
+    color: $blue-light;
+    &:hover{
+      color: #000;
+    }
+  }
+}
+
+.visit-likes {
+  float: right;
+  a {
+    font-size: 1em;
+    color: $blue-light;
+    &:hover{
+      color: #000;
+    }
+  }
+}
+
+.visit-blog {
+  width: 65%;
+  margin: 1em auto 0em;
+}
+
+/*--visit end here--*/
+span.lft-bar-visit {
+  left: 32%;
+  background: $blue-light;
+  width: 50px;
+  height: 3px;
+  display: inline-block;
+  position: absolute;
+  left: 35%;
+  top:50%;
+}
+
+span.rit-bar-visit {
+  right: 32%;
+  background: $blue-light;
+  width: 50px;
+  height: 3px;
+  display: block;
+  position: absolute;
+  right: 35%;
+  top: 50%;
+}

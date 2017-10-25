@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20171025024625) do
 
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "travel_id"
-    t.string "content"
+    t.string "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["travel_id"], name: "index_images_on_travel_id"
@@ -99,7 +99,6 @@ ActiveRecord::Schema.define(version: 20171025024625) do
 
   create_table "tours", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "travel_id"
-    t.string "tour_duration"
     t.datetime "date_start"
     t.datetime "date_end"
     t.float "price", limit: 24
@@ -113,6 +112,7 @@ ActiveRecord::Schema.define(version: 20171025024625) do
     t.boolean "flg_promotion", default: false
     t.text "schedule"
     t.text "description"
+    t.string "tour_duration"
     t.text "note"
     t.integer "id_place_from"
     t.integer "id_place_to"

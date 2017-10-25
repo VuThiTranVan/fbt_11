@@ -50,6 +50,7 @@ promotion_id = Promotion.all.pluck(:id)
     schedule: Faker::Space.agency,
     description: description,
     note: note,
+    tour_duration: "#{n + n/2} days",
     promotion_id: nil
   )
 end
@@ -62,6 +63,7 @@ end
     flg_promotion: 1,
     schedule: Faker::Space.agency,
     description: description,
+    tour_duration: "#{n + 2} days",
     note: note,
     promotion_id: Promotion.all.pluck(:id)[rand(Promotion.all.size)]
   )
@@ -69,9 +71,10 @@ end
 
 #Image
 travels_id = Travel.all.pluck(:id)
-20.times do
-  content = Faker::Placeholdit.image
-  Image.create!(travel_id: travels_id[rand(travels_id.size)], content: content)
+8.times do
+  picture = Faker::Placeholdit.image
+  Image.create!(travel_id: travels_id[rand(travels_id.size)],
+    remote_picture_url: "https://travel.com.vn/Images/tour/tfd_150325_hoi%20an.jpg")
 end
 
 # Tour
@@ -80,7 +83,6 @@ travels = Travel.all
   content = Faker::Lorem.sentence(5)
   travels.each { |travel| travel.tours.create!(
     date_start: Faker::Date.forward(30),
-    tour_duration: "#{n + 1} days",
     date_end: Faker::Date.forward(30),
     price: Faker::Number.decimal(1)
   )}

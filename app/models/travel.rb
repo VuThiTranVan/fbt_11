@@ -6,4 +6,6 @@ class Travel < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :tours, dependent: :destroy
   has_many :ratings, dependent: :destroy
+
+  scope :all_travels, ->{joins(:images).order created_at: :desc}
 end
