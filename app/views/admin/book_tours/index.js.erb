@@ -1,0 +1,9 @@
+<% if @book_tours.present? %>
+  $('#book_tous').html('<%= j render "book_tours" %>');
+<% else %>
+  swal(
+    I18n.t("flash.oops"),
+    I18n.t("admin.flash.msg_search_no_bok_tour"),
+    I18n.t("admin.flash.warning")
+  )
+<% end %>

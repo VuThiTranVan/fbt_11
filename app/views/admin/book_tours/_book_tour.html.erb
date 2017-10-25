@@ -1,0 +1,68 @@
+<div class="col-xs-12 col-sm-6 col-md-3 book_tour">
+  <div class="col-item">
+    <div class="post-img-content">
+      <%= image_tag book_tour.tour.travel.images.first.picture.url,
+        class: "circle img-responsive" %>
+        <span class="post-title">
+          <b><%= book_tour.user_name %></b>
+        </span>
+        <% if book_tour.waiting? %>
+          <span class="round-tag"><%= t ".new" %></span>
+        <% end %>
+    </div>
+    <div class="info">
+      <div class="row">
+        <div class="price col-md-12">
+          <h5 class="price-text-color">
+            <%= link_to book_tour.tour.travel_name,
+              admin_book_tour_path(book_tour.id) %>
+          </h5>
+          <h5>
+            <%= t "book_tours.satatus" %>:
+            <span> <b><%= book_tour.status.humanize %></b></span>
+            <br/>
+            <%= l book_tour.tour_date_start, format: t("date.formats.default") %>
+              &nbsp;-&nbsp;
+            <%= l book_tour.tour_date_end, format: t("date.formats.default") %>
+            <br/>
+            <%= t("book_tours.index.total_persons_price_val",
+              price: number_to_currency(book_tour.total_price),
+              person: book_tour.number_person) %>
+          </h5>
+        </div>
+      </div>
+      <% unless book_tour.reject? || book_tour.cancel? || book_tour.finish? %>
+        <div class="separator clear-left ">
+          <% if book_tour.waiting? %>
+            <p class="btn-details">
+              <%= link_to admin_book_tour_path(book_tour,
+                status: BookTour.statuses[:accept]),
+                method: :PUT, remote: true, class: "hidden-sm" do %>
+                <i class="glyphicon glyphicon-check"></i>
+                <%= t ".accept" %>
+              <% end %>
+            </p>
+          <% end %>
+          <p class="btn-details btn_reject">
+            <%= link_to admin_book_tour_path(book_tour,
+              status: BookTour.statuses[:reject]),
+              method: :PUT, remote: true, class: "hidden-sm" do %>
+              <i class="glyphicon glyphicon-minus-sign"></i>
+              <%= t ".reject" %>
+            <% end %>
+          </p>
+          <p class="btn-details">
+            <%= link_to admin_book_tour_path(book_tour,
+              status: BookTour.statuses[:finish]),
+              method: :PUT, remote: true, class: "hidden-sm" do %>
+              <i class="glyphicon glyphicon-ok-sign"></i>
+              <%= t ".finish" %>
+            <% end %>
+          </p>
+        </div>
+      <% end %>
+      <div class="clearfix">
+      </div>
+    </div>
+  </div>
+</div>

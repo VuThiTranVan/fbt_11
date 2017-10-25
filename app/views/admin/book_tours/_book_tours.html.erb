@@ -1,0 +1,11 @@
+<div class="col-sm-12">
+  <%= will_paginate @book_tours, class: "paginate-center" %>
+</div>
+<% @book_tours.each do |book_tour| %>
+  <div id="book_tour_<%= book_tour.id %>" >
+    <%= render "book_tour", book_tour: book_tour %>
+  </div>
+<% end %>
+<div class="col-sm-12">
+  <%= will_paginate @book_tours, class: "paginate-center" %>
+</div>

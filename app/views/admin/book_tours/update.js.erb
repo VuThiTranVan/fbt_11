@@ -1,0 +1,10 @@
+<% if @book_tour.present? %>
+  $('#book_tour_' + '<%= @book_tour.id.to_s %>')
+    .html('<%= j render "book_tour", book_tour: @book_tour %>')
+<% else %>
+  swal(
+    I18n.t("flash.oops"),
+    I18n.t("admin.flash.mag_update_status"),
+    I18n.t("flash.error")
+  )
+<% end %>

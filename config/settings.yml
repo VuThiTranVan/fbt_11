@@ -15,4 +15,4 @@ search_price:
   over_6: "6000"
 number_star_default: 0
 book_tour:
-  record_display: 6
+  record_display: 8
