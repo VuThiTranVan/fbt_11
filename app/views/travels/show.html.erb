@@ -68,6 +68,10 @@
         <li>
           <span><i class="glyphicon glyphicon-comment"></i>
           <%= @travel.comments.size %></span>
+          &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+          <input type="hidden" class="rating rating_js travel_<%= @travel.id %>"
+            value="<%= @travel.average_rating %>" disabled />
+          <%= hidden_field_tag :travel, @travel.id %>
         </li>
         <li>
         </li>
@@ -115,4 +119,4 @@
     </div>
   </div>
 </div>
-
+<%= javascript_include_tag "/assets/rating/custom_rating.js", "data-turbolinks-track" => "reload"%>
