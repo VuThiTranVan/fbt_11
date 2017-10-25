@@ -2,6 +2,8 @@ en:
   fbt: "Vietnam BOOKING TOUR"
   travel: "My Travels"
   read_more: "Read more"
+  tour_duration: "Tour duration"
+  btn_back: "Back"
   static_pages:
     home:
       title: "Contemplate the beauty of nature at your fingertips"
@@ -45,3 +47,28 @@ en:
     login:
       forgot_password: "Forgot the password?"
       btn_login: "Login"
+  travel:
+    tour:
+      duration: "Duration"
+      place_departure: "Place Departure"
+      place_to: "Destination"
+      schedule: "Schedule"
+      price: "Price"
+      book_tour: "Book tour now!"
+      tour_program: "TOUR PROGRAM"
+      tour_detail: "TOUR DETAIL"
+      tour_note: "NOTE"
+      tour_date_start: "Date start"
+      tour_date_end: "Date end"
+      tour_comment: "CUSTOMER REVIEWS"
+  date:
+    formats:
+      default: "%d/%m/%Y"
+  number:
+    currency:
+      format:
+        unit: "$"
+        delimiter: ","
+        separator: "."
+        precision: 2
+        format: "%u%n"

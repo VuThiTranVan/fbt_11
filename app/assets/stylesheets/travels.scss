@@ -1,4 +1,5 @@
 $blue-light: #3CAFE6;
+$gray: #ccc;
 
 .visit-top {
   text-align: center;
@@ -35,7 +36,7 @@ $blue-light: #3CAFE6;
 
 .visit-likes {
   float: right;
-  a {
+  span {
     font-size: 1em;
     color: $blue-light;
     &:hover{
@@ -45,8 +46,8 @@ $blue-light: #3CAFE6;
 }
 
 .visit-blog {
-  width: 65%;
-  margin: 1em auto 0em;
+  width: 85%;
+  margin: 0em auto 2em;
 }
 
 /*--visit end here--*/
@@ -70,4 +71,28 @@ span.rit-bar-visit {
   position: absolute;
   right: 35%;
   top: 50%;
+}
+
+.tour-info {
+  .info{
+    padding-top: 0!important;
+    border-top: 1px solid $gray;
+    padding-bottom: 15px;
+  }
+
+  ul {
+    list-style-type: none;
+    li {
+      padding-bottom: 5px;
+    }
+  }
+}
+.title_info {
+  border-left: 5px solid $blue-light;
+  padding-left: 15px;
+  color: $blue-light;
+  font-weight: bold;
+}
+.content-info {
+  padding-left: 15px;
 }
