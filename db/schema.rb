@@ -101,7 +101,6 @@ ActiveRecord::Schema.define(version: 20171025024625) do
     t.bigint "travel_id"
     t.datetime "date_start"
     t.datetime "date_end"
-    t.float "price", limit: 24
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["travel_id"], name: "index_tours_on_travel_id"
@@ -116,6 +115,7 @@ ActiveRecord::Schema.define(version: 20171025024625) do
     t.text "note"
     t.integer "id_place_from"
     t.integer "id_place_to"
+    t.float "price", limit: 24
     t.bigint "promotion_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

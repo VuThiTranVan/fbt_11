@@ -8,3 +8,4 @@ user:
   avatar_size_display: "35x25"
 travel:
   record_display: 6
+number_star_default: 0

@@ -51,6 +51,7 @@ promotion_id = Promotion.all.pluck(:id)
     description: description,
     note: note,
     tour_duration: "#{n + n/2} days",
+    price: Faker::Number.decimal(1),
     promotion_id: nil
   )
 end
@@ -65,6 +66,7 @@ end
     description: description,
     tour_duration: "#{n + 2} days",
     note: note,
+    price: Faker::Number.decimal(1),
     promotion_id: Promotion.all.pluck(:id)[rand(Promotion.all.size)]
   )
 end
@@ -91,8 +93,7 @@ end
   content = Faker::Lorem.sentence(5)
   travels.each { |travel| travel.tours.create!(
     date_start: Faker::Date.forward(30),
-    date_end: Faker::Date.forward(30),
-    price: Faker::Number.decimal(1)
+    date_end: Faker::Date.forward(30)
   )}
 end
 

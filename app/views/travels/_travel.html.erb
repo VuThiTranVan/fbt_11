@@ -7,9 +7,7 @@
   <h4><%= link_to travel.name, travel %></h4>
   <div class="visit-blog">
     <div class="visit-btn">
-      <input type="hidden" class="rating rating_js travel_<%= travel.id %>"
-        value="<%= travel.average_rating %>" disabled />
-      <%= hidden_field_tag :travel, travel.id %>
+      <%= render "ratings/show", travel: travel %>
     </div>
     <div class="visit-likes">
       <span><%= t "tour_duration" %>: <%= travel.tour_duration %></span>
