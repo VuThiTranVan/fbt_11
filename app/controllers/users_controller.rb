@@ -19,12 +19,35 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit; end
+
+  def update
+    if current_user.update_attributes user_params_update
+      flash[:success] = t "flash.mgs_update_profile_success"
+      redirect_to @user
+    else
+      flash[:danger] = t "flash.mgs_update_profile_error"
+      render :edit
+    end
+  end
+
   private
 
   def user_params
     params.require(:user).permit(
       :name,
       :email,
+      :password,
+      :password_confirmation,
+      :address,
+      :telphone,
+      :avatar
+    )
+  end
+
+  def user_params_update
+    params.require(:user).permit(
+      :name,
       :password,
       :password_confirmation,
       :address,
