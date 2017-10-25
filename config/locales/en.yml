@@ -20,6 +20,9 @@ en:
     required_login: "Please log in."
     oops: "Oops..."
     error: "error"
+    mgs_success_rating_thankyou: "Thanks you!"
+    mgs_success_rating: "You rating this travel suscess!"
+    success: "success"
   layouts:
     header:
       home: "Home"
@@ -54,7 +57,7 @@ en:
   travel:
     tour:
       duration: "Duration"
-      place_departure: "Place Departure"
+      place_form: "Place Departure"
       place_to: "Destination"
       schedule: "Schedule"
       price: "Price"
@@ -65,6 +68,7 @@ en:
       tour_date_start: "Date start"
       tour_date_end: "Date end"
       tour_comment: "CUSTOMER REVIEWS"
+      tour_rating: "RATING"
   date:
     formats:
       default: "%d/%m/%Y"
@@ -76,7 +80,13 @@ en:
         separator: "."
         precision: 2
         format: "%u%n"
-  rating_star_max: " / 5"
+    decimal_digit: 1
+  price:
+    under_1_million: "<1 Million"
+    between_1_3: "1 - 3 Million"
+    between_3_6: "3 - 6 Million"
+    over_6: "> 6 Million"
+  rating_star: "%{star} / 5"
   disabled: " disabled"
   rating:
     comfirm: "You must rating "

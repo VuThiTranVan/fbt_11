@@ -59,7 +59,7 @@
           <%= @travel.place_to.city %></span>
         </li>
         <li><span> <%= t "travel.tour.price" %></i>
-          <%= number_to_currency @travel.tours.first.price%></span>
+          <%= number_to_currency @travel.price%></span>
         </li>
       </ul>
     </div>
@@ -69,9 +69,9 @@
           <span><i class="glyphicon glyphicon-comment"></i>
           <%= @travel.comments.size %></span>
           &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-          <input type="hidden" class="rating rating_js travel_<%= @travel.id %>"
-            value="<%= @travel.average_rating %>" disabled />
-          <%= hidden_field_tag :travel, @travel.id %>
+          <span id="counting">
+            <%= render "ratings/show", travel: @travel %>
+          </span>
         </li>
         <li>
         </li>
@@ -107,6 +107,19 @@
         <%= @travel.note %>
       </div>
     </div>
+    <div class="col-md-12">
+      <h3 class="title_info"><%= t "travel.tour.tour_rating" %></h3>
+      <div class="content-info">
+        <input type="hidden" class="rating rating_js rating_by_user"
+          value="<%= @travel.average_rating %>"
+          <%= logged_in? ? "" : "disabled" %>  />
+        <span class="label label-default">
+          <%= t("rating_star",
+            star: @travel.average_rating) %>
+        </span>
+        <%= hidden_field_tag :travel_id, @travel.id %>
+      </div>
+    </div>
 
     <div class="col-md-12">
       <h3 class="title_info"><%= t "travel.tour.comment" %></h3>
@@ -119,4 +132,3 @@
     </div>
   </div>
 </div>
-<%= javascript_include_tag "/assets/rating/custom_rating.js", "data-turbolinks-track" => "reload"%>

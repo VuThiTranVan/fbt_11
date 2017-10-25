@@ -4,7 +4,6 @@ class CreateTours < ActiveRecord::Migration[5.1]
       t.references :travel, index: true, foreign_key: true
       t.datetime :date_start
       t.datetime :date_end
-      t.float :price
 
       t.timestamps
     end

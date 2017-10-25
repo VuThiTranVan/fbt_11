@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :travels, only: [:show]
+  resources :ratings, only: [:action_rating]
 
   get "signup" => "users#new"
   post "signup" => "users#create"
@@ -10,4 +11,6 @@ Rails.application.routes.draw do
   post "/login" => "sessions#create"
   delete "/logout" => "sessions#destroy"
   get "sessions/new"
+
+  post "/action_rating" => "ratings#action_rating"
 end

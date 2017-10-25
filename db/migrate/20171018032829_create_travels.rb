@@ -9,6 +9,7 @@ class CreateTravels < ActiveRecord::Migration[5.1]
       t.text :note
       t.integer :id_place_from
       t.integer :id_place_to
+      t.float :price
       t.references :promotion, index: true, foreign_key: true
 
       t.timestamps
