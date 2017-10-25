@@ -28,6 +28,7 @@ gem "rails-ujs"
 gem "faker"
 gem "will_paginate", "3.1.5"
 gem "bootstrap-will_paginate", "1.0.0"
+gem "ratyrate", github: "wazery/ratyrate"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

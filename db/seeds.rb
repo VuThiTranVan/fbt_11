@@ -71,14 +71,17 @@ end
 
 #Image
 travels_id = Travel.all.pluck(:id)
-8.times do
-  picture = Faker::Placeholdit.image
-  Image.create!(travel_id: travels_id[rand(travels_id.size)],
-    remote_picture_url: "https://travel.com.vn/Images/tour/tfd_150325_hoi%20an.jpg")
+travels = Travel.all
+
+2.times do |n|
+  content = Faker::Lorem.sentence(5)
+  travels.each { |travel| travel.images.create!(
+    travel_id: travel.id,
+    remote_picture_url: "https://travel.com.vn/Images/tour/tfd_150325_hoi%20an.jpg"
+  )}
 end
 
 # Tour
-travels = Travel.all
 2.times do |n|
   content = Faker::Lorem.sentence(5)
   travels.each { |travel| travel.tours.create!(
@@ -87,13 +90,6 @@ travels = Travel.all
     price: Faker::Number.decimal(1)
   )}
 end
-
-# Rating
-users = User.take(10)
-users.each { |user| user.ratings.create!(
-  travel_id: travels_id[rand(travels_id.size)],
-  star_number: rand(1..5)
-)}
 
 # Category
 Category.create!(name: "Place", description: "Des place")

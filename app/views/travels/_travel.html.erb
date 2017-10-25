@@ -7,11 +7,11 @@
   <h4><%= link_to travel.name, "#" %></h4>
   <div class="visit-blog">
     <div class="visit-btn">
-      <%= link_to t("read_more"), "#" %>
+      <%= rating_for travel, "rating", disable_after_rate: false %>
     </div>
     <div class="visit-likes">
-      <span class="#"><%= travel.tour_duration %></span>
+      <span><%= t "tour_duration" %>: <%= travel.tour_duration %></span>
     </div>
-    <div class="clearfix"> </div>
   </div>
+  <div class="clearfix"> </div>
 </div>

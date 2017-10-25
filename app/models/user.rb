@@ -1,10 +1,10 @@
 class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
-  has_many :ratings, dependent: :destroy
   has_many :book_tours, dependent: :destroy
   mount_uploader :avatar, AvatarUploader
   before_save{email.downcase!}
+  ratyrate_rater
 
   enum role: [:admin, :member]
 

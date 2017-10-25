@@ -35,7 +35,7 @@ $blue-light: #3CAFE6;
 
 .visit-likes {
   float: right;
-  a {
+  span {
     font-size: 1em;
     color: $blue-light;
     &:hover{
@@ -45,8 +45,8 @@ $blue-light: #3CAFE6;
 }
 
 .visit-blog {
-  width: 65%;
-  margin: 1em auto 0em;
+  width: 85%;
+  margin: 0em auto 2em;
 }
 
 /*--visit end here--*/

@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171025024625) do
+ActiveRecord::Schema.define(version: 20171027140216) do
+
+  create_table "average_caches", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "rater_id"
+    t.string "rateable_type"
+    t.bigint "rateable_id"
+    t.float "avg", limit: 24, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["rateable_type", "rateable_id"], name: "index_average_caches_on_rateable_type_and_rateable_id"
+    t.index ["rateable_type"], name: "index_average_caches_on_rateable_type"
+    t.index ["rater_id", "rateable_id"], name: "index_average_caches_on_rater_id_and_rateable_id"
+    t.index ["rater_id"], name: "index_average_caches_on_rater_id"
+  end
 
   create_table "book_tours", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "tour_id"
@@ -66,6 +79,16 @@ ActiveRecord::Schema.define(version: 20171025024625) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
+  create_table "overall_averages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "rateable_type"
+    t.bigint "rateable_id"
+    t.float "overall_avg", limit: 24, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["rateable_id", "rateable_type"], name: "index_overall_averages_on_rateable_id_and_rateable_type"
+    t.index ["rateable_type", "rateable_id"], name: "index_overall_averages_on_rateable_type_and_rateable_id"
+  end
+
   create_table "places", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.string "city"
@@ -86,15 +109,29 @@ ActiveRecord::Schema.define(version: 20171025024625) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "ratings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "travel_id"
-    t.bigint "user_id"
-    t.float "star_number", limit: 24
+  create_table "rates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "rater_id"
+    t.string "rateable_type"
+    t.bigint "rateable_id"
+    t.float "stars", limit: 24, null: false
+    t.string "dimension"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["travel_id", "user_id"], name: "index_ratings_on_travel_id_and_user_id", unique: true
-    t.index ["travel_id"], name: "index_ratings_on_travel_id"
-    t.index ["user_id"], name: "index_ratings_on_user_id"
+    t.index ["rateable_id", "rateable_type"], name: "index_rates_on_rateable_id_and_rateable_type"
+    t.index ["rateable_type", "rateable_id"], name: "index_rates_on_rateable_type_and_rateable_id"
+    t.index ["rater_id"], name: "index_rates_on_rater_id"
+  end
+
+  create_table "rating_caches", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "cacheable_type"
+    t.bigint "cacheable_id"
+    t.float "avg", limit: 24, null: false
+    t.integer "qty", null: false
+    t.string "dimension"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cacheable_id", "cacheable_type"], name: "index_rating_caches_on_cacheable_id_and_cacheable_type"
+    t.index ["cacheable_type", "cacheable_id"], name: "index_rating_caches_on_cacheable_type_and_cacheable_id"
   end
 
   create_table "tours", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -143,8 +180,6 @@ ActiveRecord::Schema.define(version: 20171025024625) do
   add_foreign_key "images", "travels"
   add_foreign_key "likes", "comments"
   add_foreign_key "likes", "users"
-  add_foreign_key "ratings", "travels"
-  add_foreign_key "ratings", "users"
   add_foreign_key "tours", "travels"
   add_foreign_key "travels", "promotions"
 end

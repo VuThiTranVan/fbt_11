@@ -2,6 +2,7 @@ en:
   fbt: "Vietnam BOOKING TOUR"
   travel: "My Travels"
   read_more: "Read more"
+  tour_duration: "Tour duration"
   static_pages:
     home:
       title: "Contemplate the beauty of nature at your fingertips"

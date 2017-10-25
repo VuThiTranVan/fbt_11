@@ -5,7 +5,7 @@ class Travel < ApplicationRecord
   has_many :images, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :tours, dependent: :destroy
-  has_many :ratings, dependent: :destroy
+  ratyrate_rateable "rating"
 
-  scope :all_travels, ->{joins(:images).order created_at: :desc}
+  scope :all_travels, -> {group(:id).order created_at: :desc}
 end

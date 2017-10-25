@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   post "/login" => "sessions#create"
   delete "/logout" => "sessions#destroy"
   get "sessions/new"
+
+  post "/rate" => "rater#create", :as => "rate"
 end
