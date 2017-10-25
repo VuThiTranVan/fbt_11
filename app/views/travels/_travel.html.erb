@@ -1,7 +1,7 @@
 <div class="col-md-4 visit-grid">
   <div class="item-1 item-type-spin">
     <div class="item-img">
-      <%= image_tag travel.images.first.picture.url, class: "img-responsive" %>
+      <%= image_tag travel.images.first.picture.url, class: "img-responsive" if travel.images.present? %>
     </div>
   </div>
   <h4><%= link_to travel.name, travel %></h4>
