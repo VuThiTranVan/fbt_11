@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  devise :database_authenticatable, :registerable,
+    :rememberable, :validatable
+
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :ratings, dependent: :destroy
@@ -16,7 +19,6 @@ class User < ApplicationRecord
     format: {with: VALID_EMAIL_REGEX},
     uniqueness: {case_sensitive: false}
 
-  has_secure_password
   validates :password, presence: true,
     length: {minimum: Settings.user.password_length}, allow_nil: true
 

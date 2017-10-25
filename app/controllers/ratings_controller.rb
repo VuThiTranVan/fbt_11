@@ -1,5 +1,5 @@
 class RatingsController < ApplicationController
-  before_action :logged_in_user, only: [:action_ratings]
+  before_action :authenticate_user!, only: [:action_ratings]
 
   def action_rating
     @rating =

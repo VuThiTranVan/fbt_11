@@ -1,5 +1,5 @@
 class Admin::TravelsController < ApplicationController
-  before_action :logged_in_user
+  before_action :authenticate_user!
   before_action :verify_admin
   before_action :load_travel
 
