@@ -30,7 +30,7 @@ en:
     mgs_fail_book_tour: "Booking tour fail"
     msg_book_error_not_found_travel: "Travel is not found"
     mgs_book_tour_not_found: "History book tour not found!!"
-    mgs_detail_book_tour_not_found: "Deatil of book tour not found!!"
+    mgs_detail_book_tour_not_found: "Detail of book tour not found!!"
     cancel_book_tour_success: "Cancel book tour successfully."
     cancel_book_tour_error: "Cancel book tour error."
     mgs_update_profile_success: "Profile update successful."
