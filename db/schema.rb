@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 20171025024625) do
     t.string "name"
     t.string "city"
     t.text "description"
-    t.boolean "flg_del"
+    t.boolean "flg_del", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -110,10 +110,9 @@ ActiveRecord::Schema.define(version: 20171025024625) do
 
   create_table "travels", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
-    t.boolean "flg_promotion"
+    t.boolean "flg_promotion", default: false
     t.text "schedule"
     t.text "description"
-    t.float "rating", limit: 24
     t.text "note"
     t.integer "id_place_from"
     t.integer "id_place_to"
