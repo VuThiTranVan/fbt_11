@@ -47,7 +47,6 @@
               :&nbsp;<%= l tour.date_end, format: t("date.formats.default")%>
               <br/>
             <% end %>
-
            </span>
         </li>
         <li><span><i class="glyphicon glyphicon-home"></i>
@@ -70,7 +69,13 @@
           <%= @travel.comments.size %></span>
           &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
           <span id="counting">
-            <%= render "ratings/show", travel: @travel %>
+            <%= render "ratings/show", travel: @travel %>&nbsp;&nbsp;
+            <% if current_user.admin? %>
+              <%= link_to admin_travel_ratings_path(@travel), class: "hidden-sm" do %>
+                <i class="glyphicon glyphicon-th-list"></i>
+                <%= t ".detail" %>
+              <% end %>
+            <% end %>
           </span>
         </li>
         <li>
@@ -107,19 +112,21 @@
         <%= @travel.note %>
       </div>
     </div>
-    <div class="col-md-12">
-      <h3 class="title_info"><%= t "travel.tour.tour_rating" %></h3>
-      <div class="content-info">
-        <input type="hidden" class="rating rating_js rating_by_user"
-          value="<%= @travel.average_rating %>"
-          <%= logged_in? ? "" : "disabled" %>  />
-        <span class="label label-default">
-          <%= t("rating_star",
-            star: @travel.average_rating) %>
-        </span>
-        <%= hidden_field_tag :travel_id, @travel.id %>
+    <% unless current_user.admin? %>
+      <div class="col-md-12">
+        <h3 class="title_info"><%= t "travel.tour.tour_rating" %></h3>
+        <div class="content-info">
+          <input type="hidden" class="rating rating_js rating_by_user"
+            value="<%= @travel.average_rating %>"
+            <%= logged_in? ? "" : "disabled" %>  />
+          <span class="label label-default">
+            <%= t("rating_star",
+              star: @travel.average_rating) %>
+          </span>
+          <%= hidden_field_tag :travel_id, @travel.id %>
+        </div>
       </div>
-    </div>
+    <% end %>
 
     <div class="col-md-12">
       <h3 class="title_info"><%= t "travel.tour.comment" %></h3>

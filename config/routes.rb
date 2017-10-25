@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   root "static_pages#show", url_page: "home"
 
   namespace :admin do
-    resources :book_tours, only: [:index, :show, :update] do
+    resources :book_tours, only: [:index, :show, :update]
+    resources :travels do
+      resources :ratings, only: :index
     end
   end
 

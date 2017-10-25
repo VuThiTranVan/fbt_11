@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   def edit; end
 
   def update
-    if current_user.update_attributes user_params_update
+    if @user.update_attributes user_params_update
       flash[:success] = t "flash.mgs_update_profile_success"
       redirect_to @user
     else
