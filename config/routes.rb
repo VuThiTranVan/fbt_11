@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root "static_pages#show", url_page: "home"
 
   resources :users
-  resources :travels, only: [:show]
+  resources :travels, only: [:show, :search]
   resources :ratings, only: [:action_rating]
 
   get "signup" => "users#new"
@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   get "sessions/new"
 
   post "/action_rating" => "ratings#action_rating"
+  get "/search" => "travels#search"
 end

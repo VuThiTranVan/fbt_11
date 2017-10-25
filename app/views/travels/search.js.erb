@@ -1,0 +1,10 @@
+<% if @travels.present? %>
+  $('#travels').html('<%= j render "travels/travels" %>')
+  $('.rating_js').rating();
+<% else %>
+  swal(
+    I18n.t("flash.oops"),
+    I18n.t("flash.no_travel"),
+    I18n.t("flash.error")
+  )
+<% end %>
