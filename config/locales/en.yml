@@ -6,7 +6,10 @@ en:
       sub_title: "Vietnam Tour Booking provides many land tours and
         cruise tours in the most popular destinations of Vietnam"
       view_more: "View more"
-
+  flash:
+    no_user: "Find not user"
+    create_user_success: "Register user success."
+    create_user_fail: "Register user fail."
   layouts:
     header:
       home: "Home"
@@ -18,3 +21,18 @@ en:
     form_search:
       title: "TOUR SEARCH"
     footer: "Copy Right by: VanVTT"
+  users:
+    error_size_avatar: "should be less than %{size}MB.
+         Please choose a smaller file."
+    name: "Full name"
+    email: "Email"
+    password: "Password"
+    password_confirmation: "Password Confirmation"
+    address: "Address"
+    telphone: "Tell phone"
+    avatar: "Avatar"
+    signup:
+      header: "REGISTER USER"
+      btn_register: "Register User"
+      btn_clear: "Clear"
+      errors_msg: "The form contains %{count_error}."

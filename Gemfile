@@ -20,6 +20,9 @@ gem "mysql2", "~> 0.3.18"
 gem "jquery-rails"
 gem "bootstrap-datepicker-rails"
 gem "bootstrap-sass", "3.3.7"
+gem "bcrypt", "3.1.11"
+gem "sprockets-rails", "2.3.3"
+gem "carrierwave", "1.1.0"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
