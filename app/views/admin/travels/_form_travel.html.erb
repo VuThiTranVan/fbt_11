@@ -1,0 +1,67 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+
+    <%= form_for [:admin, @travel] do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+
+      <div class="required margin_bottom_10">
+        <%= f.label t("admin.travels.edit.name") %>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+
+      <div class="row margin_bottom_10">
+        <div class="col-md-6 required">
+          <%= f.label t("admin.travels.edit.place_form") %>
+          <%= f.select :id_place_from,
+            options_for_select(places_for_select_box), {}, class: "form-control" %>
+        </div>
+
+        <div class="col-md-6 required">
+          <%= f.label t("admin.travels.edit.place_to") %>
+          <%= f.select :id_place_to,
+            options_for_select(places_for_select_box), {}, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="row margin_bottom_10">
+        <div class="col-md-6 required">
+          <%= f.label t "admin.travels.edit.tour_duration" %>
+          <%= f.number_field :tour_duration, min: 1, value: 1, step: 0.5,
+            disabled: true, class: "form-control" %>
+        </div>
+
+        <div class="col-md-6 required">
+          <%= f.label t "admin.travels.edit.price" %>
+          <%= f.number_field :price, min: 1, value: @travel.price, step: 0.5,
+              class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="required margin_bottom_10">
+        <%= f.label t "admin.travels.edit.schedule" %>
+        <%= f.text_area :schedule, cols: 3, rows: 5,
+          class: "form-control input-xlarge" %>
+      </div>
+
+      <div class="required margin_bottom_10">
+        <%= f.label t "admin.travels.edit.description" %>
+        <%= f.text_area :description, cols: 3, rows: 5,
+          class: "form-control input-xlarge" %>
+      </div>
+
+      <div class="margin_bottom_10">
+        <%= f.label t "admin.travels.edit.note" %>
+        <%= f.text_area :note, cols: 3, rows: 5,
+          class: "form-control input-xlarge" %>
+      </div>
+
+      <div class="button_wrapper" >
+        <%= f.submit yield(:button_text),
+          class: "btn btn-primary margin_top_20" %>
+        <%= link_to t("users.btn_cancel"), request.referer,
+          class: "btn-default btn margin_top_20" %>
+      </div>
+
+    <% end %>
+  </div>
+</div>
