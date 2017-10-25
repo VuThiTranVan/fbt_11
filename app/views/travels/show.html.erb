@@ -105,7 +105,7 @@
         <div class="content-info">
           <input type="hidden" class="rating rating_js rating_by_user"
             value="<%= @travel.average_rating %>"
-            <%= logged_in? ? "" : "disabled" %>  />
+            <%= user_signed_in? ? "" : "disabled" %>  />
           <span class="label label-default">
             <%= t("rating_star",
               star: @travel.average_rating) %>

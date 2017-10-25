@@ -1,5 +1,5 @@
 class Admin::BookToursController < ApplicationController
-  before_action :logged_in_user
+  before_action :authenticate_user!
   before_action :verify_admin
   before_action :load_book_tour, only: [:show, :update]
 

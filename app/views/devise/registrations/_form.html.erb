@@ -1,19 +1,25 @@
 <div class="row">
   <h1><%=  yield(:header) %></h1>
   <div class="col-md-6 col-md-offset-3">
-
-    <%= form_for @user, url: yield(:url_path) do |f| %>
-      <%= render "shared/error_messages", object: f.object %>
+    <%= form_for resource, as: resource_name,
+      url: registration_path(resource_name), html: {method: yield(:method)} do |f| %>
+      <%= devise_error_messages! %>
 
       <div class="required">
         <%= f.label t("users.name") %>
         <%= f.text_field :name, class: "form-control" %>
       </div>
 
-      <% unless logged_in? %>
+      <% unless user_signed_in? %>
         <div class="required">
           <%= f.label t("users.email") %>
           <%= f.email_field :email, class: "form-control" %>
+        </div>
+      <% else %>
+        <div class="form-group">
+          <%= f.label :current_password %><br>
+          <%= f.password_field :current_password,
+            autocomplete: "off", class: "form-control" %>
         </div>
       <% end %>
       <div class="required">

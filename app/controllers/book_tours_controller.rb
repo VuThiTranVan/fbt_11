@@ -1,5 +1,5 @@
 class BookToursController < ApplicationController
-  before_action :logged_in_user
+  before_action :authenticate_user!
   before_action :load_travel, only: [:new, :create]
   before_action :load_book_tour, only: [:show, :update]
   before_action :tour_valid, only: [:new, :create]
