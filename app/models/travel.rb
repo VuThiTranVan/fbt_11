@@ -7,6 +7,15 @@ class Travel < ApplicationRecord
   has_many :tours, dependent: :destroy
   has_many :ratings, dependent: :destroy
 
+  validates :name, presence: true, length: {maximum: Settings.travel.name_length}
+  validates :place_from, presence: true
+  validates :place_to, presence: true
+  validates :price, presence: true,
+    numericality: {greater_than: Settings.travel.price_greater}
+  validates :schedule, presence: true
+  validates :description, presence: true
+  validate :check_not_sam_two_places
+
   scope :order_created_desc, ->{order created_at: :desc}
 
   scope :by_place_from, ->place_form do
@@ -30,5 +39,12 @@ class Travel < ApplicationRecord
   def average_rating
     return Settings.number_star_default if ratings.nil?
     ratings.average(:star_number).to_f.round I18n.t "number.decimal_digit"
+  end
+
+  def check_not_sam_two_places
+    if id_place_from == id_place_to
+      errors.add I18n.t("admin.travels.edit.place_form"),
+        I18n.t("admin.travels.edit.msg_place_not_same")
+    end
   end
 end

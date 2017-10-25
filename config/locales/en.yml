@@ -46,6 +46,7 @@ en:
       setting: "Setting"
       book_tour: "History Booking"
       book_tour_admin: "Book tour"
+      new_travel: "Create Travel"
     form_search:
       title: "TOUR SEARCH"
       btn_search: "Search"
@@ -94,6 +95,7 @@ en:
       tour_rating: "RATING"
     show:
       detail: "Detail"
+      edit: "Edit"
   date:
     formats:
       default: "%d/%m/%Y"
@@ -161,3 +163,22 @@ en:
       not_permission: "You must has admin permission!!!"
       ratings:
         not_found: "Rating is not found!!!!"
+      travels:
+        not_found: "Travel is not found!"
+        edit:
+          mgs_error: "Update travel fails"
+          mgs_success: "Update travel successfully"
+    travels:
+      edit:
+        header: "Edit Travel"
+        btn_save_change: "Save Changes"
+        name: "Name"
+        description: "Description"
+        schedule: "Schedule"
+        tour_duration: "Tour duration (/day)"
+        note: "Note"
+        place_form: "Place Departure"
+        place_to: "Destination"
+        price: "Price"
+        msg_place_not_same: "can't be the same as Destination"
+      form_travel:

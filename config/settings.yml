@@ -10,6 +10,8 @@ user:
   profile_avatar: "250x250"
 travel:
   record_display: 6
+  name_length: 255
+  price_greater: 0
 search_price:
   under_1_million: "0..1000"
   between_1_3: "1000..3000"
