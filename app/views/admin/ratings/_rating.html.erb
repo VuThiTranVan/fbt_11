@@ -1,0 +1,20 @@
+<div class="media">
+  <%= link_to image_tag(rating.user_avatar.url,
+    size: Settings.user.avatar_size_display_midium, class: "media-photo"),
+    "#", class: "pull-left" %>
+  <div class="media-body">
+    <span class="media-meta pull-right">
+      <%= l rating.updated_at, format: t("date.formats.default") %>
+    </span>
+    <h4 class="title resminde">
+      <%= rating.user_name %>
+    </h4>
+    <p class="summary">
+      <input type="hidden" class="rating rating_js"
+        value="<%= rating.star_number %>" disabled />
+      <span class="label label-default">
+        <%= t "rating_star", star: rating.star_number %>
+      </span>
+    </p>
+  </div>
+</div>
