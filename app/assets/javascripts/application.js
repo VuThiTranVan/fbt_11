@@ -25,4 +25,3 @@
 //= require sweet-alert2-rails
 //= require book_tour
 //= require turbolinks
-
