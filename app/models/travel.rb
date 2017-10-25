@@ -7,7 +7,25 @@ class Travel < ApplicationRecord
   has_many :tours, dependent: :destroy
   has_many :ratings, dependent: :destroy
 
-  scope :all_travels, -> {order created_at: :desc}
+  scope :order_created_desc, ->{order created_at: :desc}
+
+  scope :by_place_from, ->place_form do
+    where id_place_from: place_form if place_form.present?
+  end
+
+  scope :by_place_to, ->place_to do
+    where id_place_to: place_to if place_to.present?
+  end
+
+  scope :by_price_max_range, ->max{where("price >= ?", max)}
+
+  scope :by_price_between_range, ->range_price do
+    where("price between ? and ?", range_price.first, range_price.last)
+  end
+
+  scope :by_date_of_tours, -> date do
+    joins(:tours).where("tours.date_start = DATE(?)", date) if date.present?
+  end
 
   def average_rating
     return Settings.number_star_default if ratings.nil?

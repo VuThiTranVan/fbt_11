@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   def show
-    @travels = Travel.all_travels.includes(:images, :ratings)
+    @travels = Travel.order_created_desc.includes(:images, :ratings)
       .paginate page: params[:page], per_page: Settings.travel.record_display
 
     if valid_page?
