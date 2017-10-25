@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :travel do
     name {"Travel name"}
     flg_promotion {0}

@@ -81,6 +81,7 @@ en:
       btn_save_change: "Save Changes"
       btn_cancel: "Cancel"
   travel:
+    header: "Travels"
     tour:
       duration: "Duration"
       place_form: "Place Departure"
@@ -186,4 +187,3 @@ en:
         place_to: "Destination"
         price: "Price"
         msg_place_not_same: "can't be the same as Destination"
-      form_travel:
