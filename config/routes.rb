@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  root "static_pages#show", url_page: "home"
+  root "static_pages#index"
 
   devise_for :users
+
+  resources :static_pages, only: :index
 
   namespace :admin do
     resources :book_tours, only: [:index, :show, :update]
