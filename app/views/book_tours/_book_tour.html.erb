@@ -61,7 +61,7 @@
                       <%= f.hidden_field :status,
                         value: BookTour.statuses[:cancel] %>
                       <%= button_tag t("book_tours.cancel"),
-                        class: "btn btn-warning" %>
+                        class: "btn btn-warning", data: {confirm: t(".warning_cancel")} %>
                     <% end %>
                   <% end %>
                 </li>

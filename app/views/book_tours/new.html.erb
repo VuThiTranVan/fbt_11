@@ -30,7 +30,7 @@
           <%= f.label t("book_tours.selected_time"), class: "control-label" %>
         </div>
         <div class="col-sm-9 form-group">
-          <% @travel.tours.each_with_index do |tour, index| %>
+          <% @travel.tours.start_date_greater_today.each_with_index do |tour, index| %>
             <%= f.radio_button :tour_id, tour.id.to_s, checked: true if index == 0 %>
             <%= f.radio_button :tour_id, tour.id.to_s if index != 0 %>
             <%= t "travel.tour.tour_date_start" %>:&nbsp;&nbsp;

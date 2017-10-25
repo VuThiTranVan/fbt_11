@@ -2,6 +2,7 @@ class BookToursController < ApplicationController
   before_action :logged_in_user
   before_action :load_travel, only: [:new, :create]
   before_action :load_book_tour, only: [:show, :update]
+  before_action :tour_valid, only: [:new, :create]
 
   def index
     @book_tours = current_user.book_tours.includes(:tour).newest
@@ -33,7 +34,7 @@ class BookToursController < ApplicationController
     if @book_tour.update_attributes params_book_tour_cancel
       flash[:info] = t "flash.cancel_book_tour_success"
     else
-      flash[:info] = t "flash.cancel_book_tour_error"
+      flash[:danger] = t "flash.cancel_book_tour_error"
     end
     redirect_to user_book_tours_path current_user
   end
@@ -52,6 +53,7 @@ class BookToursController < ApplicationController
       redirect_to root_path
     end
   end
+
   def load_book_tour
     @book_tour = BookTour.includes(:tour).find_by id: params[:id]
     if @book_tour.nil?
@@ -63,5 +65,12 @@ class BookToursController < ApplicationController
   def params_book_tour_cancel
     params.require(:book_tour).permit(:status)
       .merge status: BookTour.statuses[:cancel]
+  end
+
+  def tour_valid
+    unless @travel.tours.start_date_greater_today.present?
+      flash[:info] = t "flash.msg_tour_not_found_to_book"
+      redirect_to travel_path @travel
+    end
   end
 end
