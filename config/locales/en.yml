@@ -16,6 +16,10 @@ en:
     create_user_fail: "Register user fail."
     log_out_success: "Logout success."
     login_error_mgs: "Invalid email/password combination."
+    rating_create_error: "Rating error, please raing later"
+    required_login: "Please log in."
+    oops: "Oops..."
+    error: "error"
   layouts:
     header:
       home: "Home"
@@ -72,3 +76,10 @@ en:
         separator: "."
         precision: 2
         format: "%u%n"
+  rating_star_max: " / 5"
+  disabled: " disabled"
+  rating:
+    comfirm: "You must rating "
+    comfirm_yes: "Yes, I'm sure!"
+    comfirm_no: "No, cancel!"
+

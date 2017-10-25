@@ -11,10 +11,16 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap
-//= require turbolinks
-//= require_tree .
+//= require application
+//= require cable
+//= require date_picker
 //= require i18n
 //= require i18n/translations
 //= require bootstrap-datepicker
+//= require rating/bootstrap-rating
+//= require sweetalert2
+//= require sweet-alert2-rails
+//= require turbolinks

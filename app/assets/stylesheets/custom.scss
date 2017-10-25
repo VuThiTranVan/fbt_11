@@ -6,6 +6,7 @@ $high_light: #7ac483;
 $light-gray: #777;
 $gray-medium-light: #eaeaea;
 $blue-light: #3CAFE6;
+$orangeRed : #FF4500;
 
 * {
   box-sizing: border-box;
@@ -183,4 +184,11 @@ footer {
   width: 50%;
   margin: 0 auto;
   text-align: center;
+}
+
+// symbol start
+.symbol-star {
+  color: $orangeRed;
+  width: 25px;
+  font-size: 20px;
 }
