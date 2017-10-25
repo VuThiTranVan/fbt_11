@@ -24,6 +24,11 @@ en:
     mgs_success_rating: "You rating this travel suscess!"
     success: "success"
     no_travel: "Travel not found!"
+    mgs_success_book_tour: "You have successfully completed the booking of tours.
+      Please wait amoment to admin accept"
+    mgs_fail_book_tour: "Booking tour fail"
+    msg_book_error_not_found_travel: "Travel is not found"
+    mgs_book_tour_not_found: "Book tour not found!!"
   layouts:
     header:
       home: "Home"
@@ -97,4 +102,9 @@ en:
     comfirm: "You must rating "
     comfirm_yes: "Yes, I'm sure!"
     comfirm_no: "No, cancel!"
-
+  book_tours:
+    header: "BOOKING TOUR"
+    btn_booking: "Booking now!"
+    price_person: "Price/ 1 person"
+    btn_cancel: "Cancel"
+    selected_time: "Selected time"

@@ -6,7 +6,8 @@ $high_light: #7ac483;
 $light-gray: #777;
 $gray-medium-light: #eaeaea;
 $blue-light: #3CAFE6;
-$orangeRed : #FF4500;
+$orangeRed: #FF4500;
+$dodgerblue: #1E90FF;
 
 * {
   box-sizing: border-box;
@@ -191,4 +192,40 @@ footer {
   color: $orangeRed;
   width: 25px;
   font-size: 20px;
+}
+
+.custom_h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  text-align: center;
+  font-weight: normal;
+  color: $light-gray;
+}
+
+.align-center {
+  text-align: center !important;
+}
+.color-blue-light {
+  font-weight: bold;
+  color: $blue-light;
+}
+.book-trave-info {
+  .col-md-6 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 15px;
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #999;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-top-color: #DADADA;
+  }
+  .remine {
+    background-color: $dodgerblue;
+    color: white;
+  }
 }
