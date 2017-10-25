@@ -14,4 +14,11 @@ class ApplicationController < ActionController::Base
     flash[:danger] = t "flash.required_login"
     redirect_to login_url
   end
+
+  def verify_admin
+    unless current_user.admin?
+      flash[:danger] = t "admin.flash.not_permission"
+      redirect_to root_path
+    end
+  end
 end

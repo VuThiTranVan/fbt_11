@@ -43,6 +43,7 @@ en:
       profile: "Profile"
       setting: "Setting"
       book_tour: "History Booking"
+      book_tour_admin: "Book tour"
     form_search:
       title: "TOUR SEARCH"
       btn_search: "Search"
@@ -122,3 +123,25 @@ en:
       date_book_tour: "Book tour date"
       detail: "Detail"
       start_end_of_tour: "Date star/ Date end tour"
+  admin:
+    book_tours:
+      header: "BOOK TOURS"
+      new: "New"
+      detail: "Detail"
+      form_search:
+        status: "Status"
+        btn_search: "Search"
+        all_status: "All status"
+        start_date: "Start Date"
+        end_date: "End Date"
+    book_tour:
+      accept: "Accept"
+      reject: "Reject"
+      finish: "Finish"
+    flash:
+      mgs_update_boo_tour_success: "Update book tour successfully"
+      msg_search_no_bok_tour: "No matches were found"
+      mag_update_status: "Update failed, there was an error."
+      warning: "warning"
+      book_tours_not_found: "Book tour is not found!!!!"
+      not_permission: "You must has admin permission!!!"
