@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="card card-container">
+      <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+      <p id="profile-name" class="profile-name-card"></p>
+
+      <%= form_for :session, url: login_path do |f| %>
+        <span id="reauth-email" class="reauth-email"></span>
+        <%= f.label t "users.email" %>
+        <%= f.email_field :email, class: "form-control", autofocus: true %>
+
+        <%= f.label t "users.password" %>
+
+        <%= f.password_field :password, class: "form-control", required: true %>
+        <div id="remember" class="checkbox">
+        <%= f.label :remember_me do %>
+          <%= f.check_box :remember_me %>
+          <span><%= t("users.login.remember_me") %></span>
+        <% end %>
+        </div>
+
+      <%= f.submit t("users.login.btn_login"), class: "btn btn-primary btn-block" %>
+      <%= link_to t("users.login.forgot_password"), "#", class: "forgot-password" %>
+    <% end %>
+
+  </div>
+</div>
