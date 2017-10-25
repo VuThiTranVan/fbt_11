@@ -1,18 +1,16 @@
 <div class="travels">
-  <div class="container">
-    <div class="visit-main">
-      <div class="visit-top">
-        <h3><%= t ".travel" %></h3>
-        <span class="lft-bar-visit"> </span>
-        <span class="rit-bar-visit"> </span>
-      </div>
-      <%= will_paginate @travels, class: "col-md-offset-5" %>
-      <div class="visit-bottom">
-        <%= render @travels %>
-        <div class="clearfix"> </div>
-      </div>
-      <%= will_paginate @travels, class: "col-md-offset-5" %>
+  <div class="visit-main">
+    <div class="visit-top">
+      <h3><%= t ".travel" %></h3>
+      <span class="lft-bar-visit"> </span>
+      <span class="rit-bar-visit"> </span>
     </div>
+    <%= will_paginate @travels, class: "paginate-center" %>
+    <div class="visit-bottom">
+      <%= render @travels %>
+      <div class="clearfix"> </div>
+    </div>
+    <%= will_paginate @travels, class: "paginate-center" %>
   </div>
 </div>
 
