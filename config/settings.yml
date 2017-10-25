@@ -14,3 +14,5 @@ search_price:
   between_3_6: "3000..6000"
   over_6: "6000"
 number_star_default: 0
+book_tour:
+  record_display: 6

@@ -24,6 +24,14 @@ en:
     mgs_success_rating: "You rating this travel suscess!"
     success: "success"
     no_travel: "Travel not found!"
+    mgs_success_book_tour: "You have successfully completed the booking of tours.
+      Please wait amoment to admin accept"
+    mgs_fail_book_tour: "Booking tour fail"
+    msg_book_error_not_found_travel: "Travel is not found"
+    mgs_book_tour_not_found: "History book tour not found!!"
+    mgs_detail_book_tour_not_found: "Deatil of book tour not found!!"
+    cancel_book_tour_success: "Cancel book tour successfully."
+    cancel_book_tour_error: "Cancel book tour error."
   layouts:
     header:
       home: "Home"
@@ -34,6 +42,7 @@ en:
       logout: "Logout"
       profile: "Profile"
       setting: "Setting"
+      book_tour: "History Booking"
     form_search:
       title: "TOUR SEARCH"
       btn_search: "Search"
@@ -97,4 +106,19 @@ en:
     comfirm: "You must rating "
     comfirm_yes: "Yes, I'm sure!"
     comfirm_no: "No, cancel!"
-
+  book_tours:
+    header: "BOOKING TOUR"
+    btn_booking: "Booking now!"
+    price_person: "Price/ 1 person"
+    btn_cancel: "Cancel"
+    selected_time: "Selected time"
+    status: "Status"
+    edit: "Edit"
+    index:
+      header: "Booking History"
+      total_persons_price: "Total price/Persons"
+      total_persons_price_val: "%{price}/%{person} persons"
+      number_person: "Number person"
+      date_book_tour: "Book tour date"
+      detail: "Detail"
+      start_end_of_tour: "Date star/ Date end tour"
