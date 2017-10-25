@@ -1,0 +1,60 @@
+<div class="row">
+  <h3 class="color-blue-light align-center"><%= t "book_tours.header" %></h3>
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for [@travel, @book_tour], method: :post,
+      class: "form-horizontal" do |f| %>
+      <%= f.hidden_field :travel_id, value: @travel.id %>
+      <div class="form-group row">
+        <div class="col-sm-4 form-group">
+          <%= f.label :number_person, class: "control-label" %>
+          <%= f.number_field :number_person, min: 1, value: 1,
+            class: "form-control" %>
+        </div>
+        <div class="col-sm-4 form-group">
+          <%= f.label t("book_tours.price_person"), class: "control-label" %><br/>
+          <span id="price">
+            <%= number_to_currency @travel.price, disabled: true,
+              class: "form-control price" %>
+          </span>
+        </div>
+        <div class="col-sm-4 form-group">
+          <%= f.label :price_total, class: "control-label" %><br/>
+          <span id="price_total">
+            <%= number_to_currency @travel.price, disabled: true,
+              class: "form-control price_total" %>
+          </span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-3 form-group">
+          <%= f.label t("book_tours.selected_time"), class: "control-label" %>
+        </div>
+        <div class="col-sm-9 form-group">
+          <% @travel.tours.each_with_index do |tour, index| %>
+            <%= f.radio_button :tour_id, tour.id.to_s, checked: true if index == 0 %>
+            <%= f.radio_button :tour_id, tour.id.to_s if index != 0 %>
+            <%= t "travel.tour.tour_date_start" %>:&nbsp;&nbsp;
+            <%= l tour.date_start, format: t("date.formats.default") %>
+            &nbsp;-&nbsp;
+            <%= t "travel.tour.tour_date_end" %>
+            :&nbsp;<%= l tour.date_end, format: t("date.formats.default") %>
+            <br/>
+          <% end %>
+        </div>
+      </div>
+      <div class="controls">
+        <%= f.label :note, class: "control-label" %>
+        <%= f.text_area :note, cols: 3, rows: 5,
+          class: "form-control input-xlarge" %>
+      </div>
+      <div class="button_wrapper" >
+        <%= f.submit t("book_tours.btn_booking"),
+          class: "btn btn-primary margin_top_20"  %>
+        <%= link_to t("book_tours.btn_cancel"), request.referer,
+          class: "btn-default btn margin_top_20" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="clear-fix"></div>
+</div>
+<%= render "tour_info", travel: @travel %>
