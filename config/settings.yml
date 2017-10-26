@@ -1,0 +1,8 @@
+user:
+  name_length: 150
+  email_length: 255
+  password_length: 2
+  address_length: 255
+  telphone_length: 13
+  avatar_size: 2
+

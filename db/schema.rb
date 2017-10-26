@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171018032907) do
+ActiveRecord::Schema.define(version: 20171025024625) do
 
   create_table "book_tours", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "tour_id"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20171018032907) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["comment_id", "user_id"], name: "index_likes_on_comment_id_and_user_id", unique: true
     t.index ["comment_id"], name: "index_likes_on_comment_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
@@ -80,6 +81,7 @@ ActiveRecord::Schema.define(version: 20171018032907) do
     t.text "name"
     t.text "description"
     t.float "discus_percent", limit: 24
+    t.integer "flg_del"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -90,6 +92,7 @@ ActiveRecord::Schema.define(version: 20171018032907) do
     t.float "star_number", limit: 24
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["travel_id", "user_id"], name: "index_ratings_on_travel_id_and_user_id", unique: true
     t.index ["travel_id"], name: "index_ratings_on_travel_id"
     t.index ["user_id"], name: "index_ratings_on_user_id"
   end
@@ -123,13 +126,14 @@ ActiveRecord::Schema.define(version: 20171018032907) do
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email"
     t.string "name"
-    t.string "password"
-    t.string "role"
+    t.string "password_digest"
+    t.integer "role", default: 1, null: false
     t.string "address"
     t.string "telphone"
-    t.string "avata"
+    t.string "avatar"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   add_foreign_key "book_tours", "tours"
