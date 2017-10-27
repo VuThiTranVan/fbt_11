@@ -5,6 +5,7 @@ $white: #FFFFFF;
 $high_light: #7ac483;
 $light-gray: #777;
 $gray-medium-light: #eaeaea;
+$blue-light: #3CAFE6;
 
 * {
   box-sizing: border-box;
@@ -80,6 +81,7 @@ p {
   background: url(image_path("bg.jpg")) no-repeat center top;
   background-size: cover;
   position: relative;
+  height: 500px !important;
   header {
     padding: 2rem 0;
   }
@@ -136,7 +138,7 @@ p {
 
   .form_search{
     margin: auto;
-    color: $high_light;
+    color: $blue-light;
     height: 250px;
     width: 380px;
     background: rgba(0, 0, 0, 0.6);
@@ -155,10 +157,6 @@ p {
 
 .custom-nav{
   margin-bottom: 0;
-}
-
-.container {
-  padding-top: 70px;
 }
 
 footer {
