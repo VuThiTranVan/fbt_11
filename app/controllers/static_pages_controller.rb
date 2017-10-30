@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
   def show
-    @travels = Travel.all_travels.paginate page: params[:page],
-      per_page: Settings.travel.record_display
+    @travels = Travel.all_travels.includes(:images)
+      .paginate page: params[:page], per_page: Settings.travel.record_display
 
     if valid_page?
       render template: "static_pages/#{params[:url_page]}"

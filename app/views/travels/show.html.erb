@@ -1,0 +1,118 @@
+<div class="container" style="margin-top:60px;">
+  <div id="carousel-simple"  class="carousel slide col-md-6"
+    data-ride="carousel" style="float: left;">
+
+    <ol class="carousel-indicators">
+      <% @travel.images.each do |image, n| %>
+         <li data-target="#carousel-simple" data-slide-to="#{n}"
+         class="#{'active' if n == 0}"></li>
+       <% end %>
+    </ol>
+
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <%= image_tag @travel.images.first.picture.url %>
+      </div>
+      <% @travel.images.drop(1).each do |image| %>
+        <div class="item">
+           <%= image_tag image.picture.url %>
+        </div>
+      <% end %>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-simple" role="button" data-slide="prev">
+      <i class="glyphicon glyphicon-chevron-left" aria-hidden="true"></i>
+    </a>
+    <a class="right carousel-control" href="#carousel-simple" role="button" data-slide="next">
+      <i class="glyphicon glyphicon-chevron-right" aria-hidden="true"></i>
+    </a>
+  </div>
+
+  <div class="col-md-6 tour-info">
+    <h1><%= @travel.name %></h1>
+    <div class="info">
+      <ul class="grid-blog">
+        <li><span><i class="glyphicon glyphicon-time"> </i>
+          <%= t "travel.tour.duration" %>
+          <%= @travel.tour_duration %></span>
+        </li>
+        <li>
+          <span>
+            <% @travel.tours.each do |tour| %>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= t "travel.tour.tour_date_start" %>:&nbsp;&nbsp;
+              <%= l tour.date_start, format: t("date.formats.default")%>
+              &nbsp;-&nbsp;
+              <%= t "travel.tour.tour_date_end" %>
+              :&nbsp;<%= l tour.date_end, format: t("date.formats.default")%>
+              <br/>
+            <% end %>
+
+           </span>
+        </li>
+        <li><span><i class="glyphicon glyphicon-home"></i>
+          <%= t "travel.tour.place_departure" %>:
+          <%= @travel.place_from.city %></span>
+        </li>
+        <li><span>&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= t "travel.tour.place_to" %>:
+          <%= @travel.place_to.city %></span>
+        </li>
+        <li><span> <%= t "travel.tour.price" %></i>
+          <%= number_to_currency @travel.tours.first.price%></span>
+        </li>
+      </ul>
+    </div>
+    <div class="info">
+      <ul class="grid-blog">
+        <li>
+          <span><i class="glyphicon glyphicon-comment"></i>
+          <%= @travel.comments.size %></span>
+        </li>
+        <li>
+        </li>
+      </ul>
+    </div>
+
+    <%= link_to "#",
+      class: "btn btn-primary" do %>
+      <span class="glyphicon glyphicon-shopping-cart"></span>
+      <%= t "travel.tour.book_tour" %>
+    <% end %>
+    <%= link_to t("btn_back"), request.referer,
+      class: "btn-default btn" %>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="title_info"><%= t "travel.tour.tour_program" %></h3>
+      <div class="content-info">
+        <%= @travel.schedule %>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <h3 class="title_info"><%= t "travel.tour.tour_detail" %></h3>
+      <div class="content-info">
+        <%= @travel.description %>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <h3 class="title_info"><%= t "travel.tour.tour_note" %></h3>
+      <div class="content-info">
+        <%= @travel.note %>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <h3 class="title_info"><%= t "travel.tour.comment" %></h3>
+      <div class="content-info">
+        <% @travel.comments.each do |comment| %>
+          <%= comment.content %>
+          <br/>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
