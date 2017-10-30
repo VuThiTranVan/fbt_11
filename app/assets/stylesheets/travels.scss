@@ -11,14 +11,19 @@ $gray: #ccc;
   }
 }
 
-.visit-grid h4 {
-  font-size: 1.5em;
+.visit-grid{
   text-align: center;
-  margin: 0.5em 0em;
-  a{
-    color: $blue-light;
-    &:hover{
-      color: #000;
+  img {
+    margin: 0 auto;
+  }
+  h4 {
+    font-size: 1.5em;
+    margin: 0.5em 0em;
+    a{
+      color: $blue-light;
+      &:hover{
+        color: #000;
+      }
     }
   }
 }
@@ -38,10 +43,6 @@ $gray: #ccc;
   float: right;
   span {
     font-size: 1em;
-    color: $blue-light;
-    &:hover{
-      color: #000;
-    }
   }
 }
 
@@ -73,11 +74,18 @@ span.rit-bar-visit {
   top: 50%;
 }
 
+.view-detail #carousel-simple img {
+  margin: 0 auto;
+}
 .tour-info {
   .info{
     padding-top: 0!important;
     border-top: 1px solid $gray;
     padding-bottom: 15px;
+  }
+
+  .btn-booking {
+    text-align: center;
   }
 
   ul {
