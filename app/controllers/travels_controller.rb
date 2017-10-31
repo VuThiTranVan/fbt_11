@@ -8,6 +8,7 @@ class TravelsController < ApplicationController
       @images = @travel.images
       @comments = @travel.comments
       @tours = @travel.tours
+      @ratings = @travel.ratings
     end
   end
 end

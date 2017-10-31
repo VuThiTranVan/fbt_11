@@ -8,4 +8,9 @@ class Travel < ApplicationRecord
   has_many :ratings, dependent: :destroy
 
   scope :all_travels, -> {order created_at: :desc}
+
+  def average_rating
+    return if ratings.nil?
+    ratings.average(:star_number).to_f
+  end
 end
