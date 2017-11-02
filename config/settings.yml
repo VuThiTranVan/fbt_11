@@ -8,4 +8,9 @@ user:
   avatar_size_display: "35x25"
 travel:
   record_display: 6
+search_price:
+  under_1_million: "0..1000"
+  between_1_3: "1000..3000"
+  between_3_6: "3000..6000"
+  over_6: "6000"
 number_star_default: 0
