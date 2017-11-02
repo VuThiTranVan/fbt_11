@@ -16,8 +16,8 @@
 //= require bootstrap
 //= require application
 //= require cable
-//= require date_picker
 //= require i18n
+//= require rating/custom-rating
 //= require i18n/translations
 //= require bootstrap-datepicker
 //= require rating/bootstrap-rating

@@ -6,4 +6,12 @@ class ApplicationController < ActionController::Base
   def valid_info object
     render file: "public/404.html", status: 404, layout: false unless object
   end
+
+  private
+
+  def logged_in_user
+    return if logged_in?
+    flash[:danger] = t "flash.required_login"
+    redirect_to login_url
+  end
 end

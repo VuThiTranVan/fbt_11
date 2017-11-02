@@ -7,4 +7,4 @@
     </div>
   </div>
 </section>
-<%= render "travels/travels" %>
+  <%= render "travels/travels", collection: @travels || t("flash.no_travel") %>

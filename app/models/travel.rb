@@ -10,7 +10,7 @@ class Travel < ApplicationRecord
   scope :all_travels, -> {order created_at: :desc}
 
   def average_rating
-    return if ratings.nil?
-    ratings.average(:star_number).to_f
+    return Settings.number_star_default if ratings.nil?
+    ratings.average(:star_number).to_f.round I18n.t "number.decimal_digit"
   end
 end
