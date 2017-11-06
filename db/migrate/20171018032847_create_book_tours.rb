@@ -5,7 +5,7 @@ class CreateBookTours < ActiveRecord::Migration[5.1]
       t.references :user, index: true, foreign_key: true
       t.integer :number_person
       t.text :note
-      t.integer :status
+      t.integer :status, null: false, default: 0
       t.string :transaction_id
       t.datetime :purchased_date
       t.float :price

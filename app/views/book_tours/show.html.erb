@@ -1,0 +1,58 @@
+<div class="row book-trave-info">
+  <h3 class="color-blue-light align-center"><%= t "book_tours.header" %></h3>
+  <div class="col-md-6 col-md-offset-3">
+      <div class="form-group row">
+        <div class="col-sm-4 form-group">
+          <%= label_tag :number_person %>
+          <%= label_tag :number_person, @book_tour.number_person,
+            class: "form-control" %>
+        </div>
+        <div class="col-sm-4 form-group">
+          <%= label_tag t("book_tours.price_person") %>
+          <%= label_tag :price, @book_tour.price, class: "form-control" %>
+        </div>
+        <div class="col-sm-4 form-group">
+          <%= label_tag :total_price %><br/>
+          <%= label_tag :total_price, @book_tour.total_price,
+            class: "form-control" %>
+        </div>
+      </div>
+       <div class="controls">
+        <%= label_tag t "book_tours.status" %>
+        <%= label_tag :status, @book_tour.status, class: "form-control" %>
+      </div>
+      <div class="controls">
+        <%= label_tag :note %>
+        <%= label_tag :note, @book_tour.note, class: "form-control" %>
+      </div>
+  </div>
+
+  <div class="col-md-6 col-md-offset-3 remine">
+    <div class="controls">
+      <%= t "travel.tour.tour_date_start" %>:&nbsp;&nbsp;
+      <%= l @book_tour.tour.date_start, format: t("date.formats.default") %>
+      &nbsp;-&nbsp;
+      <%= t "travel.tour.tour_date_end" %>
+      :&nbsp;<%= l @book_tour.tour.date_end, format: t("date.formats.default") %>
+      </div>
+  </div>
+</div>
+<%= render "tour_info", travel: @book_tour.tour.travel %>
+<div class="row paginate-center">
+  <div class="form-group margin_top">
+    <ul class="list-inline banner-social-buttons">
+      <li>
+        <%= link_to t("btn_back"), request.referer, class: "btn-default btn" %>
+      </li>
+      <li>
+        <% if @book_tour.waiting? %>
+          <%= form_for [current_user, @book_tour] do |f| %>
+            <%= f.hidden_field :status, value: BookTour.statuses[:cancel] %>
+            <%= button_tag t("book_tours.cancel"),
+              class: "btn btn-warning" %>
+          <% end %>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>
