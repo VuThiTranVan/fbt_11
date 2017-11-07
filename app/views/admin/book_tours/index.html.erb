@@ -1,0 +1,9 @@
+<div class="row admin_book_tour">
+  <h3 class="color-blue-light align-center"><%= t "admin.book_tours.book_tours" %></h3>
+  <div class="row pull-bottom paginate-center">
+    <%= render "form_search" %>
+  </div>
+  <div id="book_tous">
+  <%= render "book_tours", collection: @book_tours || t("admin.flash.book_tours_not_found") %>
+  </div>
+</div>
