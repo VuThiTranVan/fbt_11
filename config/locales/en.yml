@@ -92,6 +92,8 @@ en:
       tour_date_end: "Date end"
       tour_comment: "CUSTOMER REVIEWS"
       tour_rating: "RATING"
+    show:
+      detail: "Detail"
   date:
     formats:
       default: "%d/%m/%Y"
@@ -148,6 +150,8 @@ en:
       accept: "Accept"
       reject: "Reject"
       finish: "Finish"
+    ratings:
+      header: "Ratings"
     flash:
       mgs_update_boo_tour_success: "Update book tour successfully"
       msg_search_no_bok_tour: "No matches were found"
@@ -155,3 +159,5 @@ en:
       warning: "warning"
       book_tours_not_found: "Book tour is not found!!!!"
       not_permission: "You must has admin permission!!!"
+      ratings:
+        not_found: "Rating is not found!!!!"
