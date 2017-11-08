@@ -6,6 +6,7 @@ user:
   telphone_length: 13
   avatar_size: 2
   avatar_size_display: "35x25"
+  profile_avatar: "250x250"
 travel:
   record_display: 6
 search_price:
