@@ -20,6 +20,7 @@ en:
     required_login: "Please log in."
     oops: "Oops..."
     error: "error"
+    warning: "warning"
     mgs_success_rating_thankyou: "Thanks you!"
     mgs_success_rating: "You rating this travel suscess!"
     success: "success"
@@ -34,6 +35,7 @@ en:
     cancel_book_tour_error: "Cancel book tour error."
     mgs_update_profile_success: "Profile update successful."
     mgs_update_profile_error: "Profile update fail."
+    msg_tour_not_found_to_book: "This travel has taken place, please choose another travel"
   layouts:
     header:
       home: "Home"
@@ -137,6 +139,8 @@ en:
       date_book_tour: "Book tour date"
       detail: "Detail"
       start_end_of_tour: "Date star/ Date end tour"
+    book_tour:
+      warning_cancel: "You will cancel this book tour. Are you sure?"
   admin:
     book_tours:
       header: "BOOK TOURS"
@@ -148,10 +152,11 @@ en:
         all_status: "All status"
         start_date: "Start Date"
         end_date: "End Date"
-    book_tour:
-      accept: "Accept"
-      reject: "Reject"
-      finish: "Finish"
+      book_tour:
+        accept: "Accept"
+        reject: "Reject"
+        finish: "Finish"
+        msg_confirm_reject: "Reject this book tour. Are your sure?"
     ratings:
       header: "Ratings"
     flash:
