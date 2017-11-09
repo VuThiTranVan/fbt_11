@@ -11,13 +11,18 @@
     <div class="navbar-collapse collapse navbar-margin" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><%= link_to t(".home"), root_path %></li>
-        <li>
-          <% if logged_in? && !current_user.admin? %>
+        <% if logged_in? && !current_user.admin? %>
+          <li>
             <%= link_to t(".book_tour"), user_book_tours_path(current_user) %>
-          <% elsif logged_in? && current_user.admin? %>
+          </li>
+        <% elsif logged_in? && current_user.admin? %>
+          <li>
             <%= link_to t(".book_tour_admin"), admin_book_tours_path %>
-          <% end %>
-        </li>
+          </li>
+          <li>
+            <%= link_to t(".new_travel"), admin_book_tours_path %>
+          </li>
+        <% end %>
         <li>
           <%= link_to t(".help"), "#" unless logged_in? && current_user.admin? %>
         </li>

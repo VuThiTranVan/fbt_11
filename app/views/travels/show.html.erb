@@ -78,11 +78,16 @@
             <% end %>
           </span>
         </li>
-        <li>
-        </li>
       </ul>
     </div>
     <div class="btn-booking">
+      <% if current_user.admin? %>
+        <%= link_to edit_admin_travel_path(@travel),
+          class: "btn btn-primary" do %>
+          <span class="glyphicon glyphicon-edit"></span>
+          <%= t ".edit" %>
+        <% end %>
+      <% end %>
       <%= link_to new_travel_book_tour_path(@travel),
         class: "btn btn-primary" do %>
         <span class="glyphicon glyphicon-shopping-cart"></span>
@@ -92,6 +97,21 @@
     </div>
   </div>
   <div class="row">
+    <% unless current_user.admin? %>
+      <div class="col-md-12">
+        <h3 class="title_info"><%= t "travel.tour.tour_rating" %></h3>
+        <div class="content-info">
+          <input type="hidden" class="rating rating_js rating_by_user"
+            value="<%= @travel.average_rating %>"
+            <%= logged_in? ? "" : "disabled" %>  />
+          <span class="label label-default">
+            <%= t("rating_star",
+              star: @travel.average_rating) %>
+          </span>
+          <%= hidden_field_tag :travel_id, @travel.id %>
+        </div>
+      </div>
+    <% end %>
     <div class="col-md-12">
       <h3 class="title_info"><%= t "travel.tour.tour_program" %></h3>
       <div class="content-info">
@@ -112,22 +132,6 @@
         <%= @travel.note %>
       </div>
     </div>
-    <% unless current_user.admin? %>
-      <div class="col-md-12">
-        <h3 class="title_info"><%= t "travel.tour.tour_rating" %></h3>
-        <div class="content-info">
-          <input type="hidden" class="rating rating_js rating_by_user"
-            value="<%= @travel.average_rating %>"
-            <%= logged_in? ? "" : "disabled" %>  />
-          <span class="label label-default">
-            <%= t("rating_star",
-              star: @travel.average_rating) %>
-          </span>
-          <%= hidden_field_tag :travel_id, @travel.id %>
-        </div>
-      </div>
-    <% end %>
-
     <div class="col-md-12">
       <h3 class="title_info"><%= t "travel.tour.comment" %></h3>
       <div class="content-info">

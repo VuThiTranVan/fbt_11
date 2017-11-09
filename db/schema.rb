@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20171025024625) do
     t.bigint "user_id"
     t.integer "number_person"
     t.text "note"
-    t.integer "status", default: 1, null: false
+    t.integer "status", default: 0, null: false
     t.string "transaction_id"
     t.datetime "purchased_date"
     t.float "price", limit: 24
