@@ -11,11 +11,11 @@
     <div class="navbar-collapse collapse navbar-margin" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><%= link_to t(".home"), root_path %></li>
-        <% if logged_in? && !current_user.admin? %>
+        <% if user_signed_in? && !current_user.admin? %>
           <li>
             <%= link_to t(".book_tour"), user_book_tours_path(current_user) %>
           </li>
-        <% elsif logged_in? && current_user.admin? %>
+        <% elsif user_signed_in? && current_user.admin? %>
           <li>
             <%= link_to t(".book_tour_admin"), admin_book_tours_path %>
           </li>
@@ -24,14 +24,14 @@
           </li>
         <% end %>
         <li>
-          <%= link_to t(".help"), "#" unless logged_in? && current_user.admin? %>
+          <%= link_to t(".help"), "#" unless user_signed_in? && current_user.admin? %>
         </li>
         <li>
-          <%= link_to t(".contact"), "#" unless logged_in? && current_user.admin? %>
+          <%= link_to t(".contact"), "#" unless user_signed_in? && current_user.admin? %>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <% if logged_in? %>
+        <% if user_signed_in? %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <%= image_tag current_user.avatar.url,
@@ -42,7 +42,7 @@
               <li><%= link_to t("layouts.header.profile"), current_user %></li>
               <li class="divider"></li>
               <li>
-                <%= link_to logout_path, method: :delete do %>
+                <%= link_to destroy_user_session_path, method: :delete do %>
                   <i class="glyphicon glyphicon-log-out"></i>
                   <%= t ".logout" %>
                 <% end %>
@@ -51,13 +51,13 @@
           </li>
         <% else %>
           <li>
-            <%= link_to signup_path do %>
+            <%= link_to new_user_registration_path do %>
               <i class="glyphicon glyphicon-user"></i>
               <%= t ".signup" %>
             <% end %>
           </li>
           <li>
-            <%= link_to login_path do %>
+            <%= link_to new_user_session_path do %>
               <i class="glyphicon glyphicon-log-in"></i>
               <%= t ".login" %>
             <% end %>
