@@ -1,9 +1,9 @@
 require "rails_helper"
  RSpec.describe Place, type: :model do
-  let(:place_from){FactoryGirl.create :place}
-  let(:place_to){FactoryGirl.create :place}
+  let(:place_from){FactoryBot.create :place}
+  let(:place_to){FactoryBot.create :place}
   let(:travel_place) do
-    FactoryGirl.create :travel, id_place_from: place_from.id, id_place_to: place_to.id
+    FactoryBot.create :travel, id_place_from: place_from.id, id_place_to: place_to.id
   end
 
   context "association" do
