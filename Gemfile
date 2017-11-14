@@ -37,6 +37,8 @@ group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "capybara", "~> 2.13"
   gem "selenium-webdriver"
+  gem "rspec-rails"
+  gem "factory_girl_rails"
 end
 
 group :development do
@@ -48,11 +50,12 @@ end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem "rubocop", "~> 0.50.0", require: false
-
 group :test do
   gem "rails-controller-testing", "1.0.2"
   gem "minitest-reporters",       "1.1.14"
   gem "guard",                    "2.13.0"
   gem "guard-minitest",           "2.4.4"
+  gem "shoulda-matchers", require: false
+  gem "database_cleaner"
+  gem "simplecov", require: false
 end
