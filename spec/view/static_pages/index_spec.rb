@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "static_pages/home.html.erb", type: :view do
+RSpec.describe "static_pages/index.html.erb", type: :view do
   let(:place1){FactoryBot.create :place}
   let(:place2){FactoryBot.create :place}
   let(:travel) do
